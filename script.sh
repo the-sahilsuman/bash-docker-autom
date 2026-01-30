@@ -15,7 +15,7 @@ sudo apt update && sudo apt upgrade -y
 
 if ! command -v docker >/dev/null 2>&1;then
     printx "Stating Installation of Docker...."
-    sudo apt install docker.io docker-compose-plugin -y
+    sudo apt install docker.io docker-compose -y
     printx "Docker Insatllation Completed...."
     sudo usermod -aG docker $USER
     printx "Please logout/login for docker group to apply"
