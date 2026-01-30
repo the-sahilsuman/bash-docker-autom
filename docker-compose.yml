@@ -6,7 +6,7 @@ services:
     ports:
       - "3000:80"
     env_file:
-      - /frontend/.env
+      - ./frontend/.env
     depends_on:
       - backend
     
@@ -15,7 +15,7 @@ services:
     ports:
       - "4000:4000"
     env_file:
-      - /backend/.env
+      - ./backend/.env
     depends_on:
       - mongo
 
