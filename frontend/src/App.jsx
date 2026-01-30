@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./styles.css";
 
-const API = process.env.VITE_API_URL; // docker service name
+const API = import.meta.env.VITE_API_URL; // docker service name
 
 function App() {
   const [tasks, setTasks] = useState([]);
