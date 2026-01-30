@@ -1,0 +1,30 @@
+version: "3"
+services:
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    env_file:
+      - /Users/the_sahilsuman/Desktop/Dev/Projects/fbd/frontend/.env
+    depends_on:
+      - backend
+    
+  backend:
+    build: ./backend
+    ports:
+      - "4000:4000"
+    env_file:
+      - /Users/the_sahilsuman/Desktop/Dev/Projects/fbd/backend/.env
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
